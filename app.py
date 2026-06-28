@@ -127,7 +127,7 @@ def make_cochlea_html(map_freqs, ref_freqs=None, map_name="Map", width=500):
         val = map_freqs[i]
         ref = ref_freqs[i] if ref_freqs else None
         if isinstance(val,float) and math.isnan(val): continue
-        ex,ey = ELEC[i]
+        ex,ey = ELEC[11-i]
         col = fcol(val)
         map_t = f'<div style="font-size:10px;font-weight:700;color:{col};text-shadow:{shadow};white-space:nowrap;margin-bottom:1px;">{round(val)}</div>'
         dot   = f'<div style="width:19px;height:19px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#c0c4d8);border:1.5px solid rgba(60,60,100,.6);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 1px 4px rgba(0,0,0,.4);"><span style="font-size:8px;font-weight:700;color:#111;">{i+1}</span></div>'
